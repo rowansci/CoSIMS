@@ -1,7 +1,7 @@
 # CoSIMS (Rowan's Version)
 CoSIMS is a **co**llision **s**imulator for **i**on-**m**obility **s**pectrometry. CoSIMS uses a trajectory-based algorithm for calculating molecular collision cross section (CCS) values for use with ion-mobility mass-spectrometry experiments.
 
-This is a modified version of [CoSIMS](https://github.com/ChristopherAMyers/CoSIMS) that allows the end user to modify the mass and polarizability (in multiples of helium's polarizability) of the collision gas through run-time options. Here's what an input file looks like when using dinitrogen as the collision case:
+This is a modified version of [CoSIMS](https://github.com/ChristopherAMyers/CoSIMS) that allows the end user to modify the mass and polarizability (in multiples of helium's polarizability) of the collision gas through run-time options. Here's what an input file looks like when using dinitrogen as the collision gas:
 
 ```
 multipole true
