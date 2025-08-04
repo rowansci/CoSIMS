@@ -856,7 +856,7 @@ void molecule2::setMolProperties(queue<double> xCoord, queue<double> yCoord, que
     }
 
     //finish the division of mass
-    mass_ext = (totalMass*heliumMassU_ext) / (totalMass + heliumMassU_ext);
+    mass_ext = (totalMass * gasMass_ext) / (totalMass + gasMass_ext);
 
     centerX /= totalMass; centerY /= totalMass; centerZ /= totalMass;
     for (int n = 1; n < numAtoms; n++)

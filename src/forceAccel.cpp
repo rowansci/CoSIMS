@@ -30,9 +30,10 @@ namespace std
         cutOffRadius = 12.0;
         resolution = 1.0;
 
-        heliumMass = 4.002602;
-
-        dipoleScalar = 28276.01363 / mass_ext;
+        heliumMass = gasMass_ext; // now the collision gas mass comes from the spec file
+                                  //
+        // Use the supplied polarizability factor (e.g., for nitrogen, gas_pol=8.221) 
+        dipoleScalar = 28276.01363 * gasPolFactor_ext / mass_ext;
 
         forceType = 6;
         mol = NULL;

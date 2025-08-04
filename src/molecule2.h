@@ -69,7 +69,6 @@ class molecule2
 	const double avo_ext = 6.02214199e+23; //Avogadro's number'
 	const double calorie_ext = 4.184; //number of jouels in 1 calorie
 	const double protonMassKg_ext = 1.67262158e-27; // mss of a proton in kg
-	const double heliumMassU_ext = 4.002602; //mass of helium in a.u.
 	
 	void assignDefaultFF();
 	bool isInt(string);

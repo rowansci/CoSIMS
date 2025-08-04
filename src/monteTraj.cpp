@@ -28,7 +28,7 @@ monteTraj::monteTraj(molecule2 &mol, threadSharedParams &share)
     char buffer[500];
     char printOut[1000] = "";
 
-    heliumMass = 4.002602;
+    heliumMass = gasMass_ext;
     mass_ext = mu = mol.totalMass*heliumMass / (mol.totalMass + heliumMass);
 
     //initialize crossSection and number of trajectories

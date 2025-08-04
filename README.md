@@ -1,7 +1,15 @@
-# CoSIMS
-CoSIMS is a Collision Simulator for Ion Mobility Spectrometry. This is a trajectory based method for calculating molecular colision cross-sections for use with IMS-MS experiments. We welcome the submission of bugs, improvements, and suggestions to the code.
+# CoSIMS (Rowan's Version)
+CoSIMS is a **co**llision **s**imulator for **i**on-**m**obility **s**pectrometry. CoSIMS uses a trajectory-based algorithm for calculating molecular collision cross section (CCS) values for use with ion-mobility mass-spectrometry experiments.
 
-If you find this code usefull, we ask that you please cite the following paper:
+This is a modified version of [CoSIMS](https://github.com/ChristopherAMyers/CoSIMS) that allows the end user to modify the mass and polarizability of the collision gas through run-time options:
 
->Christopher A. Myers, Rebecca J. D’Esposito, Daniele Fabris, Srivathsan V. Ranganathan, and Alan A. Chen. CoSIMS: An Optimized Trajectory Based Collision Simulator for Ion Mobility Spectrometry. *J. Phys. Chem. B.*, May 2019, 10.1021/acs.jpcb.9b01018.
-https://pubs.acs.org/doi/10.1021/acs.jpcb.9b01018
+```
+multipole true
+gas_mass 28.0134
+gas_pos 8.221
+threads 8
+dt 0.05
+iter 10
+```
+
+CoSIMS (Rowan's version) is a fork of the original implementation and is available under the same license. If you use CoSIMS, please cite [the original paper](https://pubs.acs.org/doi/10.1021/acs.jpcb.9b01018).

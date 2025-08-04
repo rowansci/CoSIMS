@@ -20,6 +20,9 @@
 
 #include "fileParams.h"
 
+double gasMass_ext = 4.002602;  // default collision gas mass (in atomic units)
+double gasPolFactor_ext = 1.0;  // default polarizability factor (baseline)
+
 
 fileParams::fileParams()
 {
@@ -225,7 +228,10 @@ void fileParams::setDefaultParams(string molFileName)
 
           //apply default values
           name_ext = tempName; //project name
-          mass_ext = 4; //reduced mass of system 
+          gasMass_ext = 4.002602; // collision gas mass (default: helium mass in atomic units)
+          gasPolFactor_ext = 1.0; // default polarizability factor for He (baseline value)
+          mass_ext = gasMass_ext; // use gas mass for computing reduced mass etc.
+
           subDir_ext = ""; //output directory
           dt_ext = 0.01; //trajectory integration time step in pico-sed
           temp_ext = 298; //temperature of system in Kelvin
@@ -249,7 +255,7 @@ void fileParams::setDefaultParams(string molFileName)
           multipole_radius_ext = 0; //this will be applied in molecule2.cpp
           multipole_order_ext = 1;
           printRate_ext = 20000;
-		  displayProg_ext = true;
+          displayProg_ext = true;
           maxClusterSize_ext = 4;
           totalCharge_ext = 0;
           charge_ext = false;
@@ -466,6 +472,18 @@ void fileParams::importParams(string fileName, char *currentPath, string molFile
 					if (totalCharge_ext != 0) charge_ext = true;
 					else charge_ext = false;
 				}
+        else if (option.compare("gas_mass") == 0)
+        {
+            if (changed.gas_mass) { warningFlag = true; dblParam = "GAS_MASS"; }
+            gasMass_ext = atof(value.c_str());
+            changed.gas_mass = true;
+        }
+        else if (option.compare("gas_pol") == 0)
+        {
+            if (changed.gas_pol) { warningFlag = true; dblParam = "GAS_POL"; }
+            gasPolFactor_ext = atof(value.c_str());
+            changed.gas_pol = true;
+        }
 				else
 				{
 

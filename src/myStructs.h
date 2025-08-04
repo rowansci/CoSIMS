@@ -40,6 +40,8 @@ extern string printMolName_ext;
 extern double temp_ext;
 extern double dt_ext;
 extern double mass_ext;
+extern double gasMass_ext;      // collision gas mass (set via the spec file)
+extern double gasPolFactor_ext; // collision gas relative polarizability factor
 extern double mu;
 extern int trajNum_ext;
 extern int iterations_ext;
@@ -218,6 +220,7 @@ struct userOptions
     bool dispersion_cutoff, dispersion_radius, multipole;
     bool multipole_radius, multipole_order, print_rate;
     bool max_cluster_size, charge, gMin, gMax, proj;
+    bool gas_mass, gas_pol;
 };
 
 
